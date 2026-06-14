@@ -17,7 +17,8 @@
     
     html, body {
       min-height: 100vh;
-      background: radial-gradient(ellipse at center, #1a0030 0%, #080012 60%, #000 100%);
+      /* Se cambia el fondo a blanco radial para mantener la elegancia */
+      background: radial-gradient(ellipse at center, #ffffff 0%, #f5e6ff 100%);
       display: flex; 
       align-items: center; 
       justify-content: center;
@@ -43,7 +44,7 @@
 
     .star {
       position: fixed;
-      background: #fff; 
+      background: #bb00cc; /* Estrellas moradas para resaltar en fondo blanco */
       border-radius: 50%;
       animation: twinkle var(--d) ease-in-out infinite alternate;
       pointer-events: none;
@@ -51,7 +52,7 @@
 
     @keyframes twinkle {
       from { opacity: 0.1; transform: scale(0.8); }
-      to { opacity: 0.9; transform: scale(1.3); }
+      to { opacity: 0.6; transform: scale(1.3); }
     }
 
     .butterfly {
@@ -115,12 +116,12 @@
       width: 320px; 
       height: 220px; 
       position: relative;
-      filter: drop-shadow(0 0 30px rgba(200,0,255,0.5));
+      filter: drop-shadow(0 0 30px rgba(155, 48, 255, 0.3));
       transition: filter 0.3s, transform 0.3s;
     }
 
     #envelope:hover {
-      filter: drop-shadow(0 0 55px rgba(220,50,255,0.8));
+      filter: drop-shadow(0 0 55px rgba(155, 48, 255, 0.6));
       transform: scale(1.03);
     }
 
@@ -221,28 +222,28 @@
       font-size: 14px; 
       letter-spacing: 2px; 
       cursor: pointer;
-      box-shadow: 0 0 25px rgba(155,48,255,0.55);
+      box-shadow: 0 0 25px rgba(155,48,255,0.4);
       transition: all 0.3s;
     }
 
     #open-btn:hover { 
-      box-shadow: 0 0 45px rgba(210,0,255,0.85); 
+      box-shadow: 0 0 45px rgba(210,0,255,0.6); 
       transform: scale(1.06); 
     }
 
     .title-text {
       font-family: 'Great Vibes', cursive;
-      color: #e080ff; 
-      font-size: 22px;
-      text-shadow: 0 0 20px rgba(200,0,255,0.8);
+      color: #7200a8; /* Tono morado oscuro para fondo claro */
+      font-size: 32px;
+      text-shadow: 0 0 10px rgba(200, 0, 255, 0.3);
       text-align: center; 
       margin-bottom: 4px;
       animation: glow 2.5s ease-in-out infinite alternate;
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 10px rgba(200,0,255,0.5); }
-      to   { text-shadow: 0 0 30px rgba(255,100,255,1), 0 0 60px rgba(200,0,255,0.6); }
+      from { text-shadow: 0 0 5px rgba(200,0,255,0.2); }
+      to   { text-shadow: 0 0 15px rgba(200,0,255,0.6), 0 0 25px rgba(150,0,255,0.3); }
     }
 
     /* =========================================
@@ -269,14 +270,14 @@
       width: 100%; 
       border-radius: 12px; 
       overflow: hidden;
-      box-shadow: 0 0 60px rgba(180,0,255,0.55), 0 0 120px rgba(100,0,200,0.3);
-      border: 1px solid rgba(200,0,255,0.35);
+      box-shadow: 0 0 40px rgba(180,0,255,0.3), 0 0 80px rgba(100,0,200,0.15);
+      border: 1px solid rgba(200,0,255,0.2);
       animation: cardPulse 4s ease-in-out infinite;
     }
 
     @keyframes cardPulse {
-      0%, 100% { box-shadow: 0 0 60px rgba(180,0,255,0.55), 0 0 120px rgba(100,0,200,0.3); }
-      50%      { box-shadow: 0 0 80px rgba(220,0,255,0.75), 0 0 150px rgba(140,0,255,0.4); }
+      0%, 100% { box-shadow: 0 0 40px rgba(180,0,255,0.3), 0 0 80px rgba(100,0,200,0.15); }
+      50%      { box-shadow: 0 0 60px rgba(220,0,255,0.5), 0 0 100px rgba(140,0,255,0.25); }
     }
 
     #inv-card img { 
@@ -286,7 +287,7 @@
 
     #close-btn {
       background: transparent; 
-      color: #cc88ff;
+      color: #7200a8;
       border: 1px solid #9b30ff; 
       padding: 10px 28px;
       border-radius: 30px; 
@@ -298,15 +299,15 @@
     }
 
     #close-btn:hover { 
-      background: rgba(155,48,255,0.2); 
-      box-shadow: 0 0 20px rgba(155,48,255,0.4); 
+      background: rgba(155,48,255,0.1); 
+      box-shadow: 0 0 20px rgba(155,48,255,0.3); 
     }
   </style>
 </head>
 <body>
   <div id="scene">
     <div id="envelope-section">
-      <div class="title-text">Una invitación muy especial para ti 💜</div>
+      <div class="title-text">Edita y sé creativo si así lo necesitas ✨</div>
       <div id="envelope-wrap" onclick="openEnvelope()">
         <div id="envelope">
           <div class="env-body">
@@ -332,6 +333,66 @@
 
   <script>
     // =========================================
-    // DATA & ASSETS
+    // DATA, ASSETS & ANIMATIONS
     // =========================================
-    const IMG_B64 = "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
+    
+    // Asignación directa del archivo local en lugar de usar un base64 truncado
+    const IMG_SRC = "Invitación de 15 Años Moderna Elegante Morada.jpg";
+    document.getElementById("inv-img").src = IMG_SRC;
+
+    // Función para abrir el sobre
+    function openEnvelope() {
+      // 1. Abrir la solapa superior y ocultar el sello
+      document.getElementById('flap-top').classList.add('open');
+      document.getElementById('seal').style.opacity = '0';
+      
+      // 2. Ocultar el sobre y mostrar la tarjeta después de la animación de la solapa
+      setTimeout(() => {
+        document.getElementById('envelope-section').style.display = 'none';
+        const cardContainer = document.getElementById('card-container');
+        cardContainer.classList.add('visible');
+        
+        // 3. Ejecutar la animación de entrada de la tarjeta
+        setTimeout(() => {
+          cardContainer.classList.add('shown');
+        }, 50);
+      }, 900);
+    }
+
+    // Función para cerrar la tarjeta y volver al sobre
+    function closeCard() {
+      const cardContainer = document.getElementById('card-container');
+      cardContainer.classList.remove('shown');
+      
+      setTimeout(() => {
+        cardContainer.classList.remove('visible');
+        document.getElementById('envelope-section').style.display = 'flex';
+        
+        setTimeout(() => {
+          document.getElementById('flap-top').classList.remove('open');
+          document.getElementById('seal').style.opacity = '1';
+        }, 50);
+      }, 900);
+    }
+
+    // Generador de estrellas para enriquecer la escena (opcional, pero añade el toque "Senior")
+    function createStars() {
+      const scene = document.getElementById('scene');
+      for (let i = 0; i < 40; i++) {
+        let star = document.createElement('div');
+        star.className = 'star';
+        let size = Math.random() * 3 + 1;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.left = Math.random() * 100 + 'vw';
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.setProperty('--d', (Math.random() * 2 + 1) + 's');
+        scene.appendChild(star);
+      }
+    }
+    
+    // Iniciar efectos de fondo
+    createStars();
+  </script>
+</body>
+</html>
